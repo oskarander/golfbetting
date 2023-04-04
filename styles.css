@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+body {
+  font-family: 'Libre Baskerville', Baskerville, 'Baskerville Old Face', serif;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-image: url('https://static01.nyt.com/images/2018/04/05/sports/05MASTERSTWELVE-INYT1/05MASTERSTWELVE-INYT1-videoSixteenByNineJumbo1600.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+#masters-logo {
+  max-width: 150px;
+  height: auto;
+}
+
+h1 {
+  color: #F9F6EE;
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#participants {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.participant {
+  background-color: rgba(210, 224, 196, 0.8); /* Adjusted background color with alpha value */
+  border-radius: 5px;
+  padding: 1rem;
+  box-sizing: border-box;
+  color: #F9F6EE;
+}
+
+.active-participant {
+  background-color: rgba(195, 218, 171, 0.8); /* Adjusted background color with alpha value */
+  border: 2px solid #2b6322;
+  border-radius: 5px;
+  color: #F9F6EE;
+}
+
+.player-picks {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.player-pick {
+  margin-bottom: 0.5rem;
+  color: #2b6322;
+}
+
+#golfPlayers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  list-style-type: none;
+  padding: 0;
+}
+
+#golfPlayers li {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #F9F6EE; /* Set golfer names color */
+}
+p {
+  color: #F9F6EE;
+  text-align: center;
+}
+#participants {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* flexible grid with minimum width of 200px */
+  gap: 1rem;
+}
+
+#participants .participant {
+  max-width: 100%; /* ensure participant cards do not extend beyond 1 column */
+}
+
+#golfPlayers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* flexible grid with minimum width of 200px */
+  gap: 1rem;
+  list-style-type: none;
+  padding: 0;
+}
+
+#golfPlayers li {
+  max-width: 100%; /* ensure golf player cards do not extend beyond 1 column */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+body {
+  font-family: 'Libre Baskerville', Baskerville, 'Baskerville Old Face', serif;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-image: url('https://static01.nyt.com/images/2018/04/05/sports/05MASTERSTWELVE-INYT1/05MASTERSTWELVE-INYT1-videoSixteenByNineJumbo1600.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+#masters-logo {
+  max-width: 150px;
+  height: auto;
+  animation: scaleUp 1s;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+h1 {
+  color: #F9F6EE;
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  animation: slideInDown 1s;
+}
+
+@keyframes slideInDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ... */
+
+.participant, #golfPlayers li {
+  transition: transform 0.2s ease;
+}
+
+.participant:hover, #golfPlayers li:hover {
+  transform: translateY(-10px);
+}
+
+.active-participant {
+  background-color: rgba(195, 218, 171, 0.8); /* Adjusted background color with alpha value */
+  border: 2px solid #2b6322;
+  border-radius: 5px;
+  color: #F9F6EE;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* ... */
+
+#golfPlayers li {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #F9F6EE; /* Set golfer names color */
+}
+
+/* ... */
+
+
+#error-message {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  display: none; /* Hide the error message by default */
+  margin-top: 1rem;
+}

@@ -1,0 +1,50 @@
+{
+    "meta": {
+      "title": "Golf Entry List - U.S. Open",
+      "description": "Golf Entry List for given tournament",
+      "fields": {
+        "tournament_object": {
+          "id": "Integer",
+          "type": "String - Stroke Play or Match Play - determines how to display leaderboard results.",
+          "tour_id": "Integer",
+          "name": "String",
+          "country": "String",
+          "course": "String",
+          "start_date": "String",
+          "end_date": "String",
+          "timezone": "String",
+          "prize_fund": "String",
+          "fund_currency": "String",
+          "live_details": {
+            "status": "String - pre, inprogress, endofday, completed",
+            "current_round": "Integer",
+            "total_rounds": "Integer - total number of rounds in competition",
+            "players": "Integer - number of active players",
+            "updated": "Timestamp - ISO UTC 2020-08-13T05:45:03+00:00"
+          }
+        },
+        "entry_list_array": {
+          "player_id": "Integer - unique player_id",
+          "first_name": "String",
+          "last_name": "String",
+          "country": "String"
+        }
+      }
+    },
+    "results": {
+      "tournament": {
+        "id": 511,
+        "type": "Stroke Play",
+        "tour_id": 2,
+        "name": "U.S. Open",
+        "country": "Los Angeles, USA",
+        "course": "The Los Angeles Country Club (North Course)",
+        "start_date": "2023-06-15 00:00:00",
+        "end_date": "2023-06-18 00:00:00",
+        "timezone": "America/Los_Angeles",
+        "prize_fund": "",
+        "fund_currency": "USD"
+      },
+      "entry_list": []
+    }
+  }

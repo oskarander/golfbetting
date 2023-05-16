@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golf Entry List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Golf Entry List</h1>
+  <table id="entry-list">
+    <thead>
+      <tr>
+        <th>Player ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    const url = 'https://golf-leaderboard-data.p.rapidapi.com/entry-list/511';
+    const options = {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': '5bafd4ae9fmsh7104b6d78f98516p1b2e71jsn9b72b95b1cfc',
+        'X-RapidAPI-Host': 'golf-leaderboard-data.p.rapidapi.com'
+      }
+    };
+
+    async function fetchEntryList() {
+      try {
+        const response = await fetch(url, options);
+        const result = await response.json();
+        displayEntryList(result.results.entry_list);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    function displayEntryList(players) {
+      const entryListElement = document.querySelector('#entry-list tbody');
+
+      if (players.length === 0) {
+        const row = document.createElement('tr');
+        const cell = document.createElement('td');
+        cell.setAttribute('colspan', '4');
+        cell.textContent = 'No players found.';
+        row.appendChild(cell);
+        entryListElement.appendChild(row);
+      } else {
+        players.forEach(player => {
+          const row = document.createElement('tr');
+          const playerIdCell = document.createElement('td');
+          const firstNameCell = document.createElement('td');
+          const lastNameCell = document.createElement('td');
+          const countryCell = document.createElement('td');
+
+          playerIdCell.textContent = player.player_id;
+          firstNameCell.textContent = player.first_name;
+          lastNameCell.textContent = player.last_name;
+          countryCell.textContent = player.country;
+
+          row.appendChild(playerIdCell);
+          row.appendChild(firstNameCell);
+          row.appendChild(lastNameCell);
+          row.appendChild(countryCell);
+
+          entryListElement.appendChild(row);
+        });
+      }
+    }
+
+    fetchEntryList();
+  </script>
+</body>
+</html>

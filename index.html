@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <div class="header-container">
+        <img src="https://oskarander.github.io/golfappbackup1/zfglogoblackscript.png" alt="Logo" class="logo" />
+      </div>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Masters Player Draft</title>
-  
-
+  <title>Golf Betting App</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="scripts.js" defer></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap">
+
 </head>
 <body>
-  <div id="logo-container">
-    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/MastersTournamentLogo.svg/640px-MastersTournamentLogo.svg.png" alt="Masters Tournament Logo" id="masters-logo">
-    <h1>Masters Player Draft</h1>
-    <p>Pick 5 golfers each, one at a time, </p>
-    <div id="error-message"></div>
+    <div id="navigation">
+        <a href="leaderboard.html">Leaderboard</a>
+    </div>
+  <div id="app">
+    <!-- The app's main content goes here -->
   </div>
-  <div id="participants"></div>
-  <ul id="golfPlayers"></ul>
-  
-
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
